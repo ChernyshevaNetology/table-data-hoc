@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/table-data-hoc/static/css/main.4d881e29.css",
+    "main.js": "/table-data-hoc/static/js/main.f57a173a.js",
+    "index.html": "/table-data-hoc/index.html",
+    "main.4d881e29.css.map": "/table-data-hoc/static/css/main.4d881e29.css.map",
+    "main.f57a173a.js.map": "/table-data-hoc/static/js/main.f57a173a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d881e29.css",
+    "static/js/main.f57a173a.js"
+  ]
+}
