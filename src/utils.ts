@@ -7,6 +7,7 @@ export const handleTableFormat = (data: IRawData[], formatStyle: string) => {
       return data
         .map(({ date, amount }: IRawData) => ({
           amount,
+          date,
           year: getYear(new Date(date)),
           id: Math.random(),
         }))
@@ -16,6 +17,7 @@ export const handleTableFormat = (data: IRawData[], formatStyle: string) => {
         .map(({ date, amount }: IRawData) => {
           return {
             amount,
+            date,
             month: format(new Date(date), "MMMM"),
             id: Math.random(),
           };
@@ -23,11 +25,8 @@ export const handleTableFormat = (data: IRawData[], formatStyle: string) => {
         .slice(0, 20);
     case ESortOptions.sortFormat:
       return data
-        .sort(
-          // @ts-ignore
-          (a: IRawData, b: IRawData) => new Date(a.date) - new Date(b.date)
-        )
-        .map((elem: any) => ({ ...elem, id: Math.random() }))
+        .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+        .map((elem: IRawData) => ({ ...elem, id: Math.random() }))
         .slice(0, 20);
     default:
       return data;
